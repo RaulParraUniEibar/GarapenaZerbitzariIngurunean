@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center> <h1> Kaixo Django blog AlquilerCasas</h1></center>
+    <br><br>
+    <div style="text-align: center;" >
+        <a href = "/add">Añadir Datos!</a>
+        </div>
+    <h3>Mostrar todas las casas</h3>
+    <br><br>
+    <div>
+    <table  border="1">
+        {% for cas in casas %}
+        <tr>
+            <td>
+                <div>
+                    <p><h2>{{cas.nombre}}</h2></p>
+                    <p>{{cas.ciudad}}</p>
+                    <p>{{cas.numerodepersonas}}</p>                
+                </div>
+            </td>
+            <td>
+                <a href="eliminarcasa/{{cas.id}}" color="red">Eliminar</a>
+            </td>   
+            <td>
+                <a href="updatecasa/{{cas.id}}" color="red">Editar</a>
+            </td> 
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+</div>
+<div>
+    <h3>Mostrar todas las personas</h3>
+    <table  border="1">
+        {% for per in personas %}
+        <tr>
+            <td>
+                <div>
+                    <p><h2>{{per.nombre}}</h2></p>
+                    <p>{{per.email}}</p>
+                    <p>{{per.dni}}</p>                
+                </div>
+            </td>  
+            <td>
+                <a href="eliminarpersona/{{per.id}}" color="red">Eliminar</a>
+            </td> 
+            <td>
+                <a href="updatepersona/{{per.id}}" color="red">Editar</a>
+            </td>  
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+</div>
+<div >
+    <table  border="1">
+        ALQUILER DE LAS CASAS
+    {% for alq in alquiler %}
+        <tr>
+            <td>
+                <div>
+                    <p><h3>{{alq.dia}}</h3></p>
+                    <p>Casa: {{alq.casaalquiler.nombre}}</p>
+                    <p>Ciudad: {{alq.casaalquiler.ciudad}}</p>
+                    <p>Persona: {{alq.personaalquiler.nombre}}</p>  
+                    <p>DNI:   {{alq.personaalquiler.dni}}</p>                    
+                </div>
+            </td>   
+            <td>
+                <a href="eliminaralquiler/{{alq.id}}" color="red">Eliminar</a>
+            </td> 
+            
+        </tr>
+
+        
+        {% endfor %}
+
+    </table>
+    <br><br>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+2-
+
+Egitura hau Django proiektu baten egitura da, Dago karpeta bat deitzen dana Proyecto_gastos eta gero proiektu printzipal bat deitzen dana gastos.
+
+Manage.py--> 
+Djangoko komandoak ejekutatzeko erabiltzen dugu, adibidez aplikazio berriak sortzeko.
+
+Settings.py-->
+Aplikazioaren konfigurazio osoa dago bertan.Gure proiektua erabiltzeko gorde behar dugu hor. 
+Kasu honetan Seetings.py-ean gastos deitutako proiektuari deitu behar diogu erabili ahal izateko.
+
+Models.py-->
+Modeloen datuak ditu.Models objetuak egiteko eta gordetzeko erabiltzen dira, hau da,	Datu basearen mapeoa objetuetara erabiltzen dana.
+
+Views.py--> 
+“View” bat da gure aplikazioaren logika zehazten dugun kokapena. Aurretik sortutako “model”-aren informazioa eskatuko da 
+eta sortuko den “view” batera pasatuko da, hori da helburua, informazioa bistaratzea. Bistak (view-ak) Python-eko metodoak dira.
+
+Urls.py--> 
+Proiektuaren Url guztiak ditu, adibidez editatu botoi baten click egiten baduzu zer egin behar duen atzetik(karpeta honetara joan, url hau ireki, etab...)
+
+3-
+Proiektua--> Proiektua karpeta osoa da,bertan manage.py,urls.py,settings.py eta __init__.py dauz gordeta.Hau guztia beharrezkoa da gero aplikazioa funtzionarazteko.
+
+Aplikazioa--> Aplikazioan gauza guztiak daude, models.py(db eta objetuaren erlazioa),views.py zer bistaratu nahi dugun esateko,urls.py .  
+
+Modeloa-->Gure datuen modeloa ditu, hau erabiltzen da gehienez bat objetuak sortzeko eta db-rekin konektatzeko.
+
+4-
+Aplikazioak azkarrago egiteko eta denborarik ez galtzeko. Django berez SQLite datu base bat integratuta dauka eta proiektu bat egiterakoan automatikoki sortzen du.
+Hau egin zen batez be dana proiektu berdin baten gordeta eukiteko, gainera proiektu bakoitzeko datu base berri bat egiten du.
+
+5-
+Objetuak sortzeko eta bistaratzeko erabiltzen dana, hau ikusi daiteke views.py erabiltzean datu baseko datuak bistaratzen dituenean.

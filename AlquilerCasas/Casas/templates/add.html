@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<form action="addcasa/" method="POST">
+    {% csrf_token %}
+Nombre de la casa: <input type="text" name="nombre">
+Nombre de la ciudad: <input type="text" name="ciudad">
+Numero de personas: <input type="text"
+name="numerodepersonas">
+<button type = "submit" value="Submit">Crear
+casa</button>
+</form>
+<br>
+<br>
+<form action="addpersona/" method="POST">
+    {% csrf_token %}
+    
+    Nombre de la persona: <input type="text" name="nombre">
+    Email de la persona: <input type="text" name="email">
+    Dni de la persona : <input type="text" name="dni">
+    <button type = "submit" value="Submit">Crear Persona</button>
+</form>
+<br>
+<br>
+<form action="addalquiler/" method="POST">
+    {% csrf_token %}
+    
+    Nombre de la casa: <select name="nombrecas">
+        {% for cas in casa %}
+        <option value="{{cas.id}}">{{cas.nombre}}</option>
+        {%endfor%}
+      </select>
+    Nombre de la persona: <select name="nombreper">
+        {% for per in persona %}
+        <option value="{{per.id}}">{{per.nombre}}</option>
+        {%endfor%}
+      </select>
+    
+    dia : <input type="text" name="dia">
+    <button type = "submit" value="Submit">Crear Alquiler</button>
+</form>
+{% endblock content %}

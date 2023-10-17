@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href='{%static "css/blog.css" %}'>
+    <title>Nuevos Datos</title>
+</head>
+<body>
+    <center><h1>Mete los nuevos datos</h1></center>
+    <br>
+
+    
+    <form action="/editarpersona/{{per.id}}/" method="post">
+        {% csrf_token %}
+        Nombre de la persona: <input type="text" name="nombre" value="{{per.nombre}} ">
+        Email de la persona: <input type="text" name="email" value="{{per.email}} ">
+        Dni de la persona: <input type="text" name="dni" value="{{per.dni}} ">
+        <button type = submit>Editar Casa</button>
+    </form>
+    <br><br>
+</body>
+</html>
